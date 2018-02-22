@@ -11,41 +11,18 @@ import UIKit
 
 
 class ViewController: UIViewController {
+    
+    var counterBrain: CounterBrain!
 
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var counterBrain: CounterBrain!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-//        let defaults = UserDefaults.standard
-//
-//        if let loadedCounter = defaults.value(forKey: kCounterKey) as? Int {
-//            print("Loaded counter: \(loadedCounter)")
-//        } else {
-//            print("nil counter for key: \(kCounterKey)")
-//        }
-//
-//        if let loadedDate = defaults.value(forKey: kDateKey) as? Date {
-//            print("Loaded date: \(loadedDate)")
-//        } else {
-//            print("nil date for key: \(kDateKey)")
-//        }
-//
-//
-//        let counter = 10
-//        defaults.set(counter, forKey: kCounterKey)
-//
-//
-//        let date = NSDate()
-//        defaults.set(date, forKey: kDateKey)
-        
+
+        assert(counterBrain != nil, "Counter Brain must be set before using property via dependency injection")
         
         updateDisplay()
-        
-    
     }
     
     @IBAction func minusButtonPressed(_ sender: Any) {
@@ -54,7 +31,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plusButtonPressed(_ sender: Any) {
-        
         counterBrain.increment()
         updateDisplay()
     }

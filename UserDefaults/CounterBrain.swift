@@ -16,33 +16,28 @@ class CounterBrain {
     
     var dateString: String {
         get {
-            if let dateModified = dataModel.dateModified {
+            if let dateModified = dataModel.dateModified{
                 return dateFormatter.string(from: dateModified)
             } else {
                 return kNeverModifiedString
             }
         }
+        
     }
     
     var counter: Int {
-        set {
-            dataModel.counter = newValue
-            dataModel.dateModified = Date()
-//            dataModel.save()
-        }
         get {
             return dataModel.counter
         }
-//        didSet {
-//            dataModel.dateModified = Date()
-//            dataModel.save()
-//        }
+        set {
+            dataModel.counter = newValue
+            dataModel.dateModified = Date()
+        }
     }
     
     init(dataModel: CounterModel = CounterModelUserDefaults()) {
         self.dataModel = dataModel
-        //        dateString = "Never"
-//        counter = -1
+
     }
     
     var dateFormatter: DateFormatter = {
