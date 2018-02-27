@@ -40,6 +40,15 @@ class ViewController: UIViewController {
         updateDisplay()
     }
     
+    @IBAction func share(_ sender: Any) {
+        let textToShare = "I just used counter!\n\(dateLabel.text!)\nMy total is \(counterLabel.text!)!\n"
+        let igmWebsite = NSURL(string: "http://igm.rit.edu/")
+        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivityType.print]
+        self.present(activityVC, animated: true, completion: nil)
+    }
+
     func updateDisplay() {
         counterLabel.text = "\(counterBrain.counter)"
         dateLabel.text = counterBrain.dateString
