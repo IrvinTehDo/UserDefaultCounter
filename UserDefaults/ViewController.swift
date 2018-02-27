@@ -10,10 +10,11 @@ import UIKit
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var counterBrain: CounterBrain!
-
+    var backgroundImage:UIImage?
+    
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -41,14 +42,42 @@ class ViewController: UIViewController {
     }
     
     @IBAction func share(_ sender: Any) {
+        let image = self.view.takeSnapshot()
         let textToShare = "I just used counter!\n\(dateLabel.text!)\nMy total is \(counterLabel.text!)!\n"
         let igmWebsite = NSURL(string: "http://igm.rit.edu/")
-        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!]
+        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!, image!]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activityVC.excludedActivityTypes = [UIActivityType.print]
         self.present(activityVC, animated: true, completion: nil)
     }
 
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        //if UIImagePickerController.isSourceTypeAvailable(.camera){
+        // imagePickerController.sourceType = .camera
+        // }else{
+        //  imagePickerController.sourceType = .savedPhotosAlbum
+        //}
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    // MARK: -UIImagePickerController Delegate Methods
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("finished picking")
+        let image:UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        backgroundImage = image
+        (self.view as! UIImageView).contentMode = .center
+        (self.view as! UIImageView).image = backgroundImage
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("canceled")
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
     func updateDisplay() {
         counterLabel.text = "\(counterBrain.counter)"
         dateLabel.text = counterBrain.dateString

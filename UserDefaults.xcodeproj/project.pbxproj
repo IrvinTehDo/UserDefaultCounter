@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FDFE39B203F85440092BE7F /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDFE39A203F85440092BE7F /* CounterModel.swift */; };
+		774981742044FD6200B7D82B /* UIView+takeSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774981732044FD6200B7D82B /* UIView+takeSnapshot.swift */; };
 		BDE7AEA4203F6AF100D169F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7AEA3203F6AF100D169F8 /* AppDelegate.swift */; };
 		BDE7AEA6203F6AF100D169F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7AEA5203F6AF100D169F8 /* ViewController.swift */; };
 		BDE7AEA9203F6AF100D169F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE7AEA7203F6AF100D169F8 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		3FDFE39A203F85440092BE7F /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
+		774981732044FD6200B7D82B /* UIView+takeSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+takeSnapshot.swift"; sourceTree = "<group>"; };
 		BDE7AEA0203F6AF100D169F8 /* UserDefaults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserDefaults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE7AEA3203F6AF100D169F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDE7AEA5203F6AF100D169F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				BDE7AEAA203F6AF100D169F8 /* Assets.xcassets */,
 				BDE7AEAC203F6AF100D169F8 /* LaunchScreen.storyboard */,
 				BDE7AEAF203F6AF100D169F8 /* Info.plist */,
+				774981732044FD6200B7D82B /* UIView+takeSnapshot.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774981742044FD6200B7D82B /* UIView+takeSnapshot.swift in Sources */,
 				BDE7AEA6203F6AF100D169F8 /* ViewController.swift in Sources */,
 				BDE7AEB6203F70D100D169F8 /* CounterBrain.swift in Sources */,
 				3FDFE39B203F85440092BE7F /* CounterModel.swift in Sources */,

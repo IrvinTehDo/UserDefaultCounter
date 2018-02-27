@@ -19,7 +19,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UserDefaults" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIImageView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -67,6 +67,13 @@
                                     <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xnc-b3-VCk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYQ-Vt-2X2">
+                                <rect key="frame" x="16" y="20" width="78" height="30"/>
+                                <state key="normal" title="Load Photo"/>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N3O-k1-eBq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -75,9 +82,11 @@
                             <constraint firstItem="1u4-NX-RM5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="DzH-d9-sMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z0Y-Zg-kmF" secondAttribute="trailing" constant="74" id="F8r-Z0-J1m"/>
                             <constraint firstItem="z0Y-Zg-kmF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="Hpy-B1-Yb9"/>
+                            <constraint firstItem="pYQ-Vt-2X2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OWC-VL-y90"/>
                             <constraint firstItem="1u4-NX-RM5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="OeX-5U-V5c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1u4-NX-RM5" secondAttribute="trailing" constant="8" id="RMi-WV-AWB"/>
                             <constraint firstItem="z0Y-Zg-kmF" firstAttribute="top" secondItem="TkJ-ic-sid" secondAttribute="bottom" constant="51" id="U1I-OD-JnJ"/>
+                            <constraint firstItem="pYQ-Vt-2X2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YTf-po-QGE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TkJ-ic-sid" secondAttribute="trailing" constant="33" id="lXH-zK-eqd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mCH-r7-qa0" secondAttribute="trailing" constant="16" id="nKg-xz-wGS"/>
                             <constraint firstItem="79g-j7-yuZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="npe-rX-VLb"/>
